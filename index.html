@@ -1,29 +1,4 @@
-let groenteData = {
-  wortelen: {
-    planten: "maart",
-    zaaien: "april",
-    oogsten: "juli",
-    image: "wortelen.jpg"
-  },
-  tomaten: {
-    planten: "april",
-    zaaien: "mei",
-    oogsten: "augustus",
-    image: "tomaten.jpg"
-  }
-  // Voeg hier andere groentesoorten toe
-};
-
-function updateCalendar() {
-  const selectedGroente = document.getElementById("groente").value;
-  const plantenTime = groenteData[selectedGroente].planten;
-  const zaaienTime = groenteData[selectedGroente].zaaien;
-  const oogstenTime = groenteData[selectedGroente].oogsten;
-  const groenteImage = groenteData[selectedGroente].image;
-
-  document.getElementById("planten").innerText = `Planten in: ${plantenTime}`;
-  document.getElementById("zaaien").innerText = `Zaaien in: ${zaaienTime}…
-[15:00, 05-08-2023] FF: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
