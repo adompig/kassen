@@ -11,6 +11,7 @@
     <h1>Groente Kalender</h1>
 
     <label for="groente">Kies een groente:</label>
+    <input type="text" id="zoekGroente" onkeyup="zoekGroente()" placeholder="Zoek een groente...">
     <select id="groente" onchange="updateCalendar()">
       <option value="wortelen">Wortelen</option>
       <option value="tomaten">Tomaten</option>
@@ -32,9 +33,6 @@
     <input type="text" id="nieuweZaaien" placeholder="Zaaien in">
     <input type="text" id="nieuweOogsten" placeholder="Oogsten in">
     <button onclick="voegGroenteToe()">Toevoegen</button>
-
-    <h2>Zoek groente:</h2>
-    <input type="text" id="zoekTerm" onkeyup="zoekGroente()" placeholder="Zoek een groente...">
   </div>
 
   <script src="script.js"></script>
