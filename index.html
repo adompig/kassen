@@ -1,4 +1,29 @@
-<!DOCTYPE html>
+[14:46, 05-08-2023] FF: let groenteData = {
+  wortelen: {
+    planten: "maart",
+    zaaien: "april",
+    oogsten: "juli",
+    image: "wortelen.jpg"
+  },
+  tomaten: {
+    planten: "april",
+    zaaien: "mei",
+    oogsten: "augustus",
+    image: "tomaten.jpg"
+  }
+  // Voeg hier andere groentesoorten toe
+};
+
+function updateCalendar() {
+  const selectedGroente = document.getElementById("groente").value;
+  const plantenTime = groenteData[selectedGroente].planten;
+  const zaaienTime = groenteData[selectedGroente].zaaien;
+  const oogstenTime = groenteData[selectedGroente].oogsten;
+  const groenteImage = groenteData[selectedGroente].image;
+
+  document.getElementById("planten").innerText = `Planten in: ${plantenTime}`;
+  document.getElementById("zaaien").innerText = `Zaaien in: ${zaaienTime}…
+[15:00, 05-08-2023] FF: <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -18,9 +43,12 @@
     </select>
 
     <div class="calendar">
-      <div id="planten"></div>
-      <div id="zaaien"></div>
-      <div id="oogsten"></div>
+      <div class="groente-image" id="groenteImage"></div>
+      <div>
+        <div id="planten"></div>
+        <div id="zaaien"></div>
+        <div id="oogsten"></div>
+      </div>
     </div>
 
     <h2>Voeg nieuwe groentesoort toe:</h2>
@@ -29,6 +57,9 @@
     <input type="text" id="nieuweZaaien" placeholder="Zaaien in">
     <input type="text" id="nieuweOogsten" placeholder="Oogsten in">
     <button onclick="voegGroenteToe()">Toevoegen</button>
+
+    <h2>Zoek groente:</h2>
+    <input type="text" id="zoekTerm" onkeyup="zoekGroente()" placeholder="Zoek een groente...">
   </div>
 
   <script src="script.js"></script>
