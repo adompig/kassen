@@ -54,7 +54,7 @@ function voegGroenteToe() {
 }
 
 function zoekGroente() {
-  const zoekTerm = document.getElementById("zoekTerm").value.toLowerCase();
+  const zoekTerm = document.getElementById("zoekGroente").value.toLowerCase();
   const groenteDropdown = document.getElementById("groente");
 
   for (let i = 0; i < groenteDropdown.options.length; i++) {
