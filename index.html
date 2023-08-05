@@ -4,20 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Groente Kalender</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Groente Kalender</h1>
+  <div class="container">
+    <h1>Groente Kalender</h1>
 
-  <label for="groente">Kies een groente:</label>
-  <select id="groente" onchange="updateCalendar()">
-    <option value="wortelen">Wortelen</option>
-    <option value="tomaten">Tomaten</option>
-    <!-- Voeg hier andere groentesoorten toe -->
-  </select>
+    <label for="groente">Kies een groente:</label>
+    <select id="groente" onchange="updateCalendar()">
+      <option value="wortelen">Wortelen</option>
+      <option value="tomaten">Tomaten</option>
+      <!-- Voeg hier andere groentesoorten toe -->
+    </select>
 
-  <div id="planten"></div>
-  <div id="zaaien"></div>
-  <div id="oogsten"></div>
+    <div class="calendar">
+      <div id="planten"></div>
+      <div id="zaaien"></div>
+      <div id="oogsten"></div>
+    </div>
+
+    <h2>Voeg nieuwe groentesoort toe:</h2>
+    <input type="text" id="nieuweGroente" placeholder="Groente naam">
+    <input type="text" id="nieuwePlanten" placeholder="Planten in">
+    <input type="text" id="nieuweZaaien" placeholder="Zaaien in">
+    <input type="text" id="nieuweOogsten" placeholder="Oogsten in">
+    <button onclick="voegGroenteToe()">Toevoegen</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
