@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groente Kalender</title>
+</head>
+<body>
+  <h1>Groente Kalender</h1>
+
+  <label for="groente">Kies een groente:</label>
+  <select id="groente" onchange="updateCalendar()">
+    <option value="wortelen">Wortelen</option>
+    <option value="tomaten">Tomaten</option>
+    <!-- Voeg hier andere groentesoorten toe -->
+  </select>
+
+  <div id="planten"></div>
+  <div id="zaaien"></div>
+  <div id="oogsten"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
