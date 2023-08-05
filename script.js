@@ -28,14 +28,35 @@ function updateCalendar() {
 }
 
 function voegGroenteToe() {
-  // Dezelfde functie zoals eerder gegeven
+  const nieuweGroente = document.getElementById("nieuweGroente").value;
+  const nieuwePlanten = document.getElementById("nieuwePlanten").value;
+  const nieuweZaaien = document.getElementById("nieuweZaaien").value;
+  const nieuweOogsten = document.getElementById("nieuweOogsten").value;
+
+  groenteData[nieuweGroente] = {
+    planten: nieuwePlanten,
+    zaaien: nieuweZaaien,
+    oogsten: nieuweOogsten
+  };
+
+  // Reset de invoervelden
+  document.getElementById("nieuweGroente").value = "";
+  document.getElementById("nieuwePlanten").value = "";
+  document.getElementById("nieuweZaaien").value = "";
+  document.getElementById("nieuweOogsten").value = "";
+
+  // Voeg de nieuwe groente toe aan het dropdown-menu
+  const groenteDropdown = document.getElementById("groente");
+  const nieuweGroenteOptie = document.createElement("option");
+  nieuweGroenteOptie.value = nieuweGroente;
+  nieuweGroenteOptie.textContent = nieuweGroente;
+  groenteDropdown.appendChild(nieuweGroenteOptie);
 }
 
 function zoekGroente() {
   const zoekTerm = document.getElementById("zoekTerm").value.toLowerCase();
   const groenteDropdown = document.getElementById("groente");
 
-  // Filter de opties in het dropdown-menu op basis van de zoekterm
   for (let i = 0; i < groenteDropdown.options.length; i++) {
     const groenteOptie = groenteDropdown.options[i];
     const groenteNaam = groenteOptie.textContent.toLowerCase();
@@ -46,6 +67,9 @@ function zoekGroente() {
       groenteOptie.style.display = "none";
     }
   }
+
+  groenteDropdown.selectedIndex = 0;
+  updateCalendar();
 }
 
 updateCalendar();
